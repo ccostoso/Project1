@@ -1,0 +1,13 @@
+.container {
+    background-color: red;
+}
+
+.div {
+    background-color: green;
+}
+
+.container .div {
+    background-color: blue;
+}
+
+Achoo!
