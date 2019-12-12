@@ -13,19 +13,20 @@ body {
     animation-duration: .4s;
 }
 
-.in-fade {
-    animation-name: in-fade;
+.right-fade {
+    animation-name: right-fade;
     animation-duration: .4s;
 }
 
-.right-fade {
-    animation-name: right-fade;
+.in-fade {
+    animation-name: in-fade;
     animation-duration: .4s;
 }
 
 @keyframes left-fade {
     from {
         position: relative;
+        opacity: 1;
     }
     to {
         position: relative;
@@ -37,6 +38,7 @@ body {
 @keyframes right-fade {
     from {
         position: relative;
+        opacity: 1;
     }
     to {
         position: relative;
