@@ -16,6 +16,26 @@ var windowArr = [
         qNum: 3,
         qText: "Do you have a headache?",
     },
+    {
+        qNum: 4,
+        qText: "Are you experiencing body aches/pains/chills?",
+    },
+    {
+        qNum: 5,
+        qText: "Are you experiencing nausea/dizziness?",
+    },
+    {
+        qNum: 6,
+        qText: "Do you have a fever?",
+    },
+    {
+        qNum: 7,
+        qText: "Have you been coughing?",
+    },
+    {
+        qNum: 8,
+        qText: "Did your symptoms come on suddenly?",
+    },
 ];
 
 function createQuestionWindows() {
