@@ -3,6 +3,49 @@ var fluCount = 0;
 var coldCount = 0;
 var lastCounted;
 
+var windowArr = [
+    {
+        qNum: 1,
+        qText: "Do you have a sore throat?",
+    },
+    {
+        qNum: 2,
+        qText: "Do you have a runny nose?",
+    },
+    {
+        qNum: 3,
+        qText: "Do you have a headache?",
+    },
+];
+
+function createQuestionWindows() {
+    $.each(windowArr, function(i, ele) {
+        var eleQNum = ele.qNum;
+        var eleQText = ele.qText;
+
+        
+        var main = $("<main>").attr("data-qnum", eleQNum);
+
+        main.addClass("d-none jumbotron container my-auto");
+
+        main.append(
+            $("<h1>").addClass("display-4").text(eleQText)
+        );
+        main.append($("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
+            $("<button>").addClass("btn btn-info cold mr-4").text("Yes"),
+            $("<button>").addClass("btn btn-info cold mr-4").text("No")
+        ), );
+        main.append(
+            $("<div>").addClass("d-flex justify-content-start").append($("<button>").addClass("btn btn-danger back-button").text("Back"))
+        );
+
+        $("#q-windows").append(main);
+    })
+
+}
+
+createQuestionWindows();
+
 function proceed(action) {
     var direction;
     if (!action) {
@@ -53,3 +96,6 @@ $(".cold").on("click", function() {
     lastCounted = "cold";
     console.log("coldCount", coldCount);
 })
+
+
+
