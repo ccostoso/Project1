@@ -32,8 +32,9 @@ body {
           animation-duration: 0.4s;
 }
 
-main.transparent {
+.transparent {
   z-index: 10;
+  background-color: rgba(233, 236, 239, 0.8);
 }
 
 #myVideo {
