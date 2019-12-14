@@ -1,7 +1,6 @@
 $(document).ready(function () {
     console.log("ready!");
 
-                // Runny Nose Card
     var cold = "Runny Nose";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'runny nose' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
 
