@@ -151,4 +151,24 @@ $(".next").on("click", function() {
 
 $(".back").on("click", function() {
     proceed("back");
+    
+    if (answerArr[answerArr.length - 1] === "sick") {
+        answerArr.pop();
+        console.log('answerArr', answerArr);
+        sickCount--;
+        console.log("sickCount", sickCount);
+    } 
+    else if (answerArr[answerArr.length - 1] === "flu") {
+        fluCount--;
+        console.log("fluCount", fluCount);
+        answerArr.pop();
+        console.log("answerArr", answerArr);
+    } else if (answerArr[answerArr.length - 1] === "healthy") {
+        answerArr.pop();
+        console.log("answerArr", answerArr);
+    } else if (answerArr[answerArr.length - 1] === "cold") {
+        answerArr.pop();
+        console.log("answerArr", answerArr);
+    }
+    
 });
