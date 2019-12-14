@@ -1,40 +1,49 @@
 var windowNum = 0;
 var fluCount = 0;
-var coldCount = 0;
+var sickCount = 0;
+var answerArr = [];
 var lastCounted;
 
 var windowArr = [
     {
         qNum: 1,
         qText: "Do you have a sore throat?",
+        qAnswer: "B"
     },
     {
         qNum: 2,
         qText: "Do you have a runny nose?",
+        qAnswer: "B"
     },
     {
         qNum: 3,
         qText: "Do you have a headache?",
+        qAnswer: "F"
     },
     {
         qNum: 4,
         qText: "Are you experiencing body aches/pains/chills?",
+        qAnswer: "F"
     },
     {
         qNum: 5,
         qText: "Are you experiencing nausea/dizziness?",
+        qAnswer: "F"
     },
     {
         qNum: 6,
         qText: "Do you have a fever?",
+        qAnswer: "F"
     },
     {
         qNum: 7,
         qText: "Have you been coughing?",
+        qAnswer: "F"
     },
     {
         qNum: 8,
         qText: "Did your symptoms come on suddenly?",
+        qAnswer: "F"
     },
 ];
 
@@ -43,7 +52,6 @@ function createQuestionWindows() {
         var eleQNum = ele.qNum;
         var eleQText = ele.qText;
 
-        
         var main = $("<main>").attr("data-qnum", eleQNum);
 
         main.addClass("d-none jumbotron container my-auto");
@@ -51,12 +59,36 @@ function createQuestionWindows() {
         main.append(
             $("<h1>").addClass("display-4").text(eleQText)
         );
-        main.append($("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
-            $("<button>").addClass("btn btn-info cold mr-4").text("Yes"),
-            $("<button>").addClass("btn btn-info cold mr-4").text("No")
-        ), );
+        
+        if (ele.qAnswer === "B") {
+            main.append(
+                $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
+                    $("<button>").addClass("btn btn-info mr-4 next sick").text("Yes"),
+                    $("<button>").addClass("btn btn-info next healthy").text("No")
+                ), 
+            );
+        } else if (
+            (ele.qAnswer !== "B")
+            &&
+            (ele.qNum < windowArr.length)
+        ) {
+            main.append(
+                $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
+                    $("<button>").addClass("btn btn-info mr-4 next flu").text("Yes"),
+                    $("<button>").addClass("btn btn-info next cold").text("No")
+                ), 
+            );
+        } else {
+            main.append(
+                $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
+                    $("<button>").addClass("btn btn-info mr-4 next flu results").text("Yes"),
+                    $("<button>").addClass("btn btn-info next cold results").text("No")
+                ), 
+            );
+        }
+
         main.append(
-            $("<div>").addClass("d-flex justify-content-start").append($("<button>").addClass("btn btn-danger back-button").text("Back"))
+            $("<div>").addClass("d-flex justify-content-start").append($("<button>").addClass("btn btn-danger back").text("Back"))
         );
 
         $(document.body).append(main);
@@ -95,27 +127,28 @@ function proceed(action) {
     }, 400);
 }
 
-$("#start-button").on("click", function() {
+$(".next").on("click", function() {
     proceed();
-});
 
-$(".back-button").on("click", function() {
+    if ($(this).hasClass("sick")) {
+        sickCount++;
+        console.log("sickCount", sickCount);
+        answerArr.push("sick");
+        console.log("answerArr", answerArr);
+    } else if ($(this).hasClass("flu")) {
+        fluCount++;
+        console.log("fluCount", fluCount);
+        answerArr.push("flu");
+        console.log("answerArr", answerArr);
+    } else if ($(this).hasClass("healthy")) {
+        answerArr.push("healthy");
+        console.log("answerArr", answerArr);
+    } else if ($(this).hasClass("cold")) {
+        answerArr.push("cold");
+        console.log("answerArr", answerArr);
+    }
+})
+
+$(".back").on("click", function() {
     proceed("back");
 });
-
-$(".flu").on("click", function() {
-    proceed();
-    fluCount++;
-    lastCounted = "flu";
-    console.log("fluCount", fluCount);
-})
-
-$(".cold").on("click", function() {
-    proceed();
-    coldCount++;
-    lastCounted = "cold";
-    console.log("coldCount", coldCount);
-})
-
-
-
