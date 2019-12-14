@@ -1,57 +1,101 @@
 html,
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 .btn,
 .jumbotron {
-    border-radius: 0px;
+  border-radius: 0px;
 }
 
 .left-fade {
-    animation-name: left-fade;
-    animation-duration: .4s;
+  -webkit-animation-name: left-fade;
+          animation-name: left-fade;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
 }
 
 .right-fade {
-    animation-name: right-fade;
-    animation-duration: .4s;
+  -webkit-animation-name: right-fade;
+          animation-name: right-fade;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
 }
 
 .in-fade {
-    animation-name: in-fade;
-    animation-duration: .4s;
+  -webkit-animation-name: in-fade;
+          animation-name: in-fade;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes left-fade {
+  from {
+    position: relative;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+    opacity: 0;
+  }
 }
 
 @keyframes left-fade {
-    from {
-        position: relative;
-        opacity: 1;
-    }
-    to {
-        position: relative;
-        transform: translateX(-5%);
-        opacity: 0;
-    }
+  from {
+    position: relative;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes right-fade {
+  from {
+    position: relative;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
+    opacity: 0;
+  }
 }
 
 @keyframes right-fade {
-    from {
-        position: relative;
-        opacity: 1;
-    }
-    to {
-        position: relative;
-        transform: translateX(5%);
-        opacity: 0;
-    }
+  from {
+    position: relative;
+    opacity: 1;
+  }
+  to {
+    position: relative;
+    -webkit-transform: translateX(5%);
+            transform: translateX(5%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes in-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes in-fade {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+/*# sourceMappingURL=style.css.map */
