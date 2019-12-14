@@ -54,7 +54,7 @@ function createQuestionWindows() {
 
         var main = $("<main>").attr("data-qnum", eleQNum);
 
-        main.addClass("d-none jumbotron container my-auto");
+        main.addClass("d-none jumbotron container my-auto transparent");
 
         main.append(
             $("<h1>").addClass("display-4").text(eleQText)

@@ -9,6 +9,7 @@ body {
 }
 
 .left-fade {
+  position: relative;
   -webkit-animation-name: left-fade;
           animation-name: left-fade;
   -webkit-animation-duration: 0.4s;
@@ -16,6 +17,7 @@ body {
 }
 
 .right-fade {
+  position: relative;
   -webkit-animation-name: right-fade;
           animation-name: right-fade;
   -webkit-animation-duration: 0.4s;
@@ -23,19 +25,30 @@ body {
 }
 
 .in-fade {
+  position: relative;
   -webkit-animation-name: in-fade;
           animation-name: in-fade;
   -webkit-animation-duration: 0.4s;
           animation-duration: 0.4s;
 }
 
+main.transparent {
+  z-index: 10;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 @-webkit-keyframes left-fade {
   from {
-    position: relative;
     opacity: 1;
   }
   to {
-    position: relative;
     -webkit-transform: translateX(-5%);
             transform: translateX(-5%);
     opacity: 0;
@@ -44,11 +57,9 @@ body {
 
 @keyframes left-fade {
   from {
-    position: relative;
     opacity: 1;
   }
   to {
-    position: relative;
     -webkit-transform: translateX(-5%);
             transform: translateX(-5%);
     opacity: 0;
@@ -57,11 +68,9 @@ body {
 
 @-webkit-keyframes right-fade {
   from {
-    position: relative;
     opacity: 1;
   }
   to {
-    position: relative;
     -webkit-transform: translateX(5%);
             transform: translateX(5%);
     opacity: 0;
@@ -70,11 +79,9 @@ body {
 
 @keyframes right-fade {
   from {
-    position: relative;
     opacity: 1;
   }
   to {
-    position: relative;
     -webkit-transform: translateX(5%);
             transform: translateX(5%);
     opacity: 0;
