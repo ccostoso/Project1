@@ -1,7 +1,6 @@
 $(document).ready(function () {
     console.log("ready!");
 
-    var cold = "Runny Nose";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'runny nose' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
 
     $.ajax({
@@ -16,6 +15,8 @@ $(document).ready(function () {
     });
 
 /*------------------------------- First Card Symptoms------------------------------*/
+
+// need to create an on click event 
 
 var helpNeeded="Find Doctor"; 
 var queryURL= "https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=4a76ed5c62af00d6fd94b0fa706cfbf6";
@@ -33,7 +34,7 @@ $.ajax({
 });
 
     /* ------------------------------Second Card ----------------------------------- */
-    var preventativeCare = "remedies";
+    
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'person working out' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
 
     $.ajax({
