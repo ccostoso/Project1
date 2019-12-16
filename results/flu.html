@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="project1.css"> 
+    <title>Results: Flu</title>
+</head>
+<body>
+    <header id="fluheader">Websites solely for consumer convenience and education and is not responsible for user's health.</header>
+    <h1 class="text-center" style="font-family: 'Lobster', cursive;"><img src="https://mahjonggmentor.com/wp-content/uploads/2014/09/smiley-sneezer.jpg" alt="..." class="rounded-circle">ACHOO</h1>
+    <div class="jumbotron container">
+            <div class="container">
+              <h1 class="display-4" style="font-family: 'Lobster Two', cursive;">Your Result: Flu</h1>
+              <p class="lead">Influenza, or flu, is a respiratory illness that results from a viral infection. Flu is highly contagious and spreads through respiratory droplets. A person can pass it on while talking or through physical contact, such as shaking hands.</p>
+            </div>
+          </div>
+    <div class="container" style="border-width: 10%;">
+            <div class="w3-panel w3-topbar w3-bottombar w3-border-yellow w3-pale-yellow">
+                    <p> <div class="row">
+                            <div class="col card mr-5">
+                                    <img id="flu1" class="card-img-top" alt="flu 1">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Flu Treatment</h5>
+                                      <p class="card-text">Influenza (flu) can cause mild to severe illness, and at times can lead to death. Flu is different from a cold. Flu usually comes on suddenly. People who have flu often feel some or all of these symptoms:</p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">Fever or feeling feverish/chills</li>
+                                      <li class="list-group-item">Cought</li>
+                                      <li class="list-group-item">Sore throat</li>
+                                      <li class="list-group-item">Runny or stuffy nose</li>
+                                      <li class="list-group-item">Muscle or body aches</li>
+                                    </ul>
+                                    <div class="card-body">
+                                            <button type="button" class="btn btn-success">Cure Me Now</button>
+                                    </div>
+                                  </div>
+                            <div class="col card">
+                                    <img id="flu2" class="card-img-top" alt="Flu 2">
+                                    <div class="card-body">
+                                            <br>
+                                            <br>
+                                            <br>
+                                      <h5 class="card-title">Preventative Care</h5>
+                                      <p class="card-text">If you don’t make an effort to prevent it, odds are that you’ll catch the flu this season. Take the below actions now to help you stay healthy:</p>
+                                   
+                                     <br>
+                                      <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Avoid close contact with people with flu</li>
+                                            <li class="list-group-item">Get seasonal flu shot</li>
+                                            <li class="list-group-item">Wash your hands often with warm water & soap</li>
+                                            <li class="list-group-item">Carry hand sanitizer & disinfectant wipes</li>
+                                            <li class="list-group-item">Exercise at least 4 days a week</li>
+                                          </ul>
+                                          <br>
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                                                Help me prevent it
+                                              </button>
+                                    </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="width:90%" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="staticBackdropLabel">Preventative Care Videos</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="height: 100%;">
+                    <div class="container">
+                            <div class="row">
+                              <div class="col-sm">
+                                  <h4 class="videotitle">7 ways to help prevent flu germs from spreading</h4>
+                                    <div class="full reveal" id="featvideo" data-reveal>
+                                            <div class="responsive-embed widescreen reveal-content">
+                                                <div id="player1">
+                                                    
+                              </div>
+                              <div class="col-lg">
+                                    <h4 class="videotitle">Natural Cold & Flu remedies with tonic recipes</h4>
+                                    <div class="full reveal" id="featvideo">
+                                            <div class="responsive-embed widescreen reveal-content">
+                                                <div id="player2">
+                                                   
+                              </div>
+                              <div class="col-sm">
+                                    <h4 class="videotitle">Prevent Flu! Get a Flu Vaccine and Take Preventive Actions</h4>
+                                    <div class="full reveal" id="featvideo" data-reveal>
+                                            <div class="responsive-embed widescreen reveal-content">
+                                                <div id="player3">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+
+                                  </div>
+                    </div></p>
+                  </div>  
+                  <script src="https://code.jquery.com/jquery-3.4.1.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+                  <script text="text/javascript" src="../assets/js/results.js"></script>  
+</body>
+</html>
 
