@@ -1,0 +1,72 @@
+$dur: .4s;
+
+@mixin fade($direction) {
+    position: relative;
+    animation-name: $direction + "-fade";
+    animation-duration: $dur;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+.btn,
+.jumbotron {
+    border-radius: 0px;
+}
+
+.left-fade {
+    @include fade(left);
+}
+
+.right-fade {
+    @include fade(right);
+}
+
+.in-fade {
+    @include fade(in)
+}
+
+.transparent {
+    z-index: 10;
+    background-color: rgba(233, 236, 239, .8);
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+
+@keyframes left-fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+}
+
+@keyframes right-fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(5%);
+        opacity: 0;
+    }
+}
+
+@keyframes in-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
