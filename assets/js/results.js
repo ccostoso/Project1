@@ -108,41 +108,60 @@ $(document).ready(function () {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("youtube", response);
 
-    })
+        console.log(response);
+        //  Trying to get the image to be added into the img tag 
+        console.log('response----->', response);
+        // results[i]    .images.fixed_height.url
+        var rNose = $('#flu2').attr("src", response.data[3].images.fixed_height.url);
+        console.log( typeof response.data );
+    });
 
+});
 
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// Youtube API
+var search= "tea";
+var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=tea&key=AIzaSyApou57R2okMqV6UNU5tGaGRB6qJ72YXFE";
+// response will be an array.  Each item in the array has an id.  so you will want to add that id to the end of the url below
+// "https://www.youtube.com/watch?v="+result[index].id       
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function(response)
+{ console.log("youtube", response);
 
-    var playerInfoList = [{
-        id: 'player1',
-        videoId: 'qKYjj4VTksI'
-    }, {
-        id: 'player2',
-        videoId: '4DI1fPyAssA'
-    }, {
-        id: 'player3',
-        videoId: 'QvyaE_eXDJU'
-    }];
-
-    function onYouTubeIframeAPIReady() {
-        if (typeof playerInfoList === 'undefined') return;
-
-        for (var i = 0; i < playerInfoList.length; i++) {
-            var curplayer = createPlayer(playerInfoList[i]);
-            players[i] = curplayer;
-        }
-    }
-
-    var players = new Array();
-
-    function createPlayer(playerInfo) {
-        return new YT.Player(playerInfo.id, {
-            videoId: playerInfo.videoId,
-        });
-    }
 })
+
+
+  var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var playerInfoList = [{
+id: 'player1',
+videoId: 'qKYjj4VTksI'
+}, {
+id: 'player2',
+videoId: '4DI1fPyAssA'
+}, {
+id: 'player3',
+videoId: 'QvyaE_eXDJU'
+}];
+
+function onYouTubeIframeAPIReady() {
+if (typeof playerInfoList === 'undefined') return;
+
+for (var i = 0; i < playerInfoList.length; i++) {
+    var curplayer = createPlayer(playerInfoList[i]);
+    players[i] = curplayer;
+}
+}
+
+var players = new Array();
+
+function createPlayer(playerInfo) {
+return new YT.Player(playerInfo.id, {
+    videoId: playerInfo.videoId,
+});
+}
