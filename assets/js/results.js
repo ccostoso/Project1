@@ -87,7 +87,7 @@ $(document).ready(function () {
         //  Trying to get the image to be added into the img tag 
         console.log('response----->', response);
         // results[i]    .images.fixed_height.url
-        var rNose = $('#flu2').attr("src", response.data[2].images.fixed_height.url);
+        var rNose = $('#flu2').attr("src", response.data[3].images.fixed_height.url);
         console.log( typeof response.data );
     });
 
