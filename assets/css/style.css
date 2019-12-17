@@ -8,6 +8,12 @@ body {
   border-radius: 0px;
 }
 
+.btn {
+  border-width: 2px;
+  font-weight: bold;
+  background-color: rgba(233, 236, 239, 0.9);
+}
+
 .left-fade {
   position: relative;
   -webkit-animation-name: left-fade;
@@ -106,16 +112,4 @@ body {
     opacity: 1;
   }
 }
-
-#fluheader{
-    text-align: center;
-     background-color: lightgray;
-     height: 10%;
-     color: black;
-};
-
-.videotitle{
-   color: darkblue;
-}
-
 /*# sourceMappingURL=style.css.map */

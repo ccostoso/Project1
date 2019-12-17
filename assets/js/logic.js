@@ -77,8 +77,8 @@ function createQuestionWindows() {
         if (ele.qAnswer === "B") {
             main.append(
                 $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
-                    $("<button>").addClass("btn btn-info mr-4 next sick").text("Yes"),
-                    $("<button>").addClass("btn btn-info next healthy").text("No")
+                    $("<button>").addClass("btn btn-outline-info mr-4 next sick").text("Yes"),
+                    $("<button>").addClass("btn btn-outline-info next healthy").text("No")
                 ), 
             );
         } else if (
@@ -88,15 +88,15 @@ function createQuestionWindows() {
         ) {
             main.append(
                 $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
-                    $("<button>").addClass("btn btn-info mr-4 next flu").text("Yes"),
-                    $("<button>").addClass("btn btn-info next cold").text("No")
+                    $("<button>").addClass("btn btn-outline-info mr-4 next flu").text("Yes"),
+                    $("<button>").addClass("btn btn-outline-info next cold").text("No")
                 ), 
             );
         } else {
             main.append(
                 $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
-                    $("<button>").addClass("btn btn-info mr-4 next flu results").text("Yes"),
-                    $("<button>").addClass("btn btn-info next cold results").text("No")
+                    $("<button>").addClass("btn btn-outline-info mr-4 next flu results").text("Yes"),
+                    $("<button>").addClass("btn btn-outline-info next cold results").text("No")
                 ), 
             );
         }
@@ -165,7 +165,7 @@ $(".next").on("click", function() {
 
 $(".back").on("click", function() {
     proceed("back");
-    
+
     if (answerArr[answerArr.length - 1] === "sick") {
         answerArr.pop();
         console.log('answerArr', answerArr);
