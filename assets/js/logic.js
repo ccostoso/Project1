@@ -47,6 +47,20 @@ var windowArr = [
     },
 ];
 
+var sneezeAudio = document.getElementById("myAudio"); 
+
+function playAudio() {
+    console.log('ACHOO'); 
+  sneezeAudio.play(); 
+} 
+var first = true;
+$(document).on('click', function(){
+    if (first) {
+        playAudio();
+        first = false;
+    }
+})
+
 function createQuestionWindows() {
     $.each(windowArr, function(i, ele) {
         var eleQNum = ele.qNum;
