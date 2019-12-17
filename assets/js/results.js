@@ -37,6 +37,7 @@ $(document).ready(function () {
             var doctorArray= response.data;
             for(var i=0; i<doctorArray.length; i++){
                 $('#doctors-placeholder').append($('<p>').text(doctorArray[i].profile.bio));
+                $('#myModal').appendTo("body").modal('show');
                 console.log(doctorArray[i].profile.bio);
             }
              console.log(typeof response.data);
