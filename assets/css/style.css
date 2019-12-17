@@ -106,4 +106,16 @@ body {
     opacity: 1;
   }
 }
+
+#fluheader{
+    text-align: center;
+     background-color: lightgray;
+     height: 10%;
+     color: black;
+};
+
+.videotitle{
+   color: darkblue;
+}
+
 /*# sourceMappingURL=style.css.map */
