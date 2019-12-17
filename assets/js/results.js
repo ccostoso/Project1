@@ -32,7 +32,7 @@ $.ajax({
     //  Trying to get the api of doctor location to be added into 
     console.log('response----->', response);
     // results[i]    .images.fixed_height.url
-    var rNose = $('#serious-symptom').attr("src", response.data[0].profile.images_url);
+    var rNose = $('#doctor-request').attr("src", response.data[0].profile.images_url);
     console.log( typeof response.data );
 });
 
