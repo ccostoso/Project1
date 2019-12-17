@@ -1,6 +1,6 @@
 /*------------------------COLD Card Symptoms------------------------------------*/
 
-$(document).ready(function () {
+$(document).ready(function() {
     console.log("ready!");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'runny nose' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
@@ -34,12 +34,12 @@ $(document).ready(function () {
             console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $("#doctor-request").attr("src", response.data[0].profile.images_url);
-            var doctorArray= response.data;
-            for(var i=0; i<doctorArray.length; i++){
+            var doctorArray = response.data;
+            for (var i = 0; i < doctorArray.length; i++) {
                 $('#doctors-placeholder').append($('<p>').text(doctorArray[i].profile.bio));
                 console.log(doctorArray[i].profile.bio);
             }
-             console.log(typeof response.data);
+            console.log(typeof response.data);
         });
 
         /* ------------------------------Preventative Care Card ----------------------------------- */
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     // FLU
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         console.log("ready!");
 
 
@@ -107,51 +107,39 @@ $(document).ready(function () {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function (response) 
+    }).then(function(response) {
 
-// Youtube API
-var search= "tea";
-var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=tea&key=AIzaSyApou57R2okMqV6UNU5tGaGRB6qJ72YXFE";
-// response will be an array.  Each item in the array has an id.  so you will want to add that id to the end of the url below
-// "https://www.youtube.com/watch?v="+result[index].id       
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function(response)
-{ console.log("youtube", response);
 
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var playerInfoList = [{
+            id: 'player1',
+            videoId: 'qKYjj4VTksI'
+        }, {
+            id: 'player2',
+            videoId: '4DI1fPyAssA'
+        }, {
+            id: 'player3',
+            videoId: 'QvyaE_eXDJU'
+        }];
+
+        function onYouTubeIframeAPIReady() {
+            if (typeof playerInfoList === 'undefined') return;
+
+            for (var i = 0; i < playerInfoList.length; i++) {
+                var curplayer = createPlayer(playerInfoList[i]);
+                players[i] = curplayer;
+            }
+        }
+
+        var players = new Array();
+
+        function createPlayer(playerInfo) {
+            return new YT.Player(playerInfo.id, {
+                videoId: playerInfo.videoId,
+            });
+        }
 })
-
-
-  var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var playerInfoList = [{
-id: 'player1',
-videoId: 'qKYjj4VTksI'
-}, {
-id: 'player2',
-videoId: '4DI1fPyAssA'
-}, {
-id: 'player3',
-videoId: 'QvyaE_eXDJU'
-}];
-
-function onYouTubeIframeAPIReady() {
-if (typeof playerInfoList === 'undefined') return;
-
-for (var i = 0; i < playerInfoList.length; i++) {
-    var curplayer = createPlayer(playerInfoList[i]);
-    players[i] = curplayer;
-}
-}
-
-var players = new Array();
-
-function createPlayer(playerInfo) {
-return new YT.Player(playerInfo.id, {
-    videoId: playerInfo.videoId,
-});
-}
