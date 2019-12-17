@@ -170,5 +170,12 @@ $(".back").on("click", function() {
         answerArr.pop();
         console.log("answerArr", answerArr);
     }
-    
 });
+
+$(".results").on("click", function() {
+    if (fluCount >= Math.floor((answerArr.length - 2) / 2)) {
+        window.location.href = "results/flu.html";
+    } else {
+        window.location.href = "results/cold.html";
+    }
+})
