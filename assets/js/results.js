@@ -93,7 +93,7 @@ $(document).ready(function () {
             //  Trying to get the image to be added into the img tag 
             console.log('response----->', response);
             // results[i]    .images.fixed_height.url
-            var rNose = $('#flu2').attr("src", response.data[3].images.fixed_height.url);
+            var rNose = $('#flu2').attr("src", response.data[1].images.fixed_height.url);
             console.log(typeof response.data);
         });
 
@@ -107,17 +107,7 @@ $(document).ready(function () {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function (response) {
-
-        console.log(response);
-        //  Trying to get the image to be added into the img tag 
-        console.log('response----->', response);
-        // results[i]    .images.fixed_height.url
-        var rNose = $('#flu2').attr("src", response.data[3].images.fixed_height.url);
-        console.log( typeof response.data );
-    });
-
-});
+    }).then(function (response) 
 
 // Youtube API
 var search= "tea";
