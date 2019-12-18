@@ -16,6 +16,12 @@ body {
     border-radius: 0px;
 }
 
+.btn {
+    border-width: 2px;
+    font-weight: bold;
+    background-color: rgba(233, 236, 239, .9);
+}
+
 .left-fade {
     @include fade(left);
 }
