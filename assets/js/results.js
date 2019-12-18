@@ -16,6 +16,50 @@ $(document).ready(function () {
     });
 
 
+    /*------------------------------- Cold Card Better Help Api------------------------------*/
+
+    // need to create 1 on click event 
+    // neeed to create a hover event 
+     $("#doctor-request").on("click", function (e) {
+         e.preventDefault();
+        var helpNeeded = "Find Doctor";
+        var queryURL = "https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=4a76ed5c62af00d6fd94b0fa706cfbf6";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            //  Trying to get the api of doctor location to be added into 
+            console.log('response----->', response);
+            // results[i]    .images.fixed_height.url
+            var rNose = $("#doctor-request").attr("src", response.data[0].profile.images_url);
+            var doctorArray= response.data;
+            for(var i=0; i<doctorArray.length; i++){
+                $('#doctors-placeholder').append($('<p>').text(doctorArray[i].profile.bio));
+                $('#myModal').appendTo("body").modal('show');
+                console.log(doctorArray[i].profile.bio);
+            }
+             console.log(typeof response.data);
+        });
+
+        /* ------------------------------Preventative Care Card ----------------------------------- */
+
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'person working out' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            //  Trying to get the image to be added into the img tag 
+            console.log('response----->', response);
+            // results[i]    .images.fixed_height.url
+            var rNose = $('#working-out').attr("src", response.data[0].images.fixed_height.url);
+            console.log(typeof response.data);
+        });
+
+
     /*------------------------------- First Card Symptoms------------------------------*/
 
 
