@@ -34,13 +34,16 @@ $(document).ready(function () {
             console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $("#doctor-request").attr("src", response.data[0].profile.images_url);
-            var doctorArray = response.data;
-            for (var i = 0; i < doctorArray.length; i++) {
-                $('#doctors-placeholder').append($('<p>').text(doctorArray[i].profile.bio));
-                $('#myModal').appendTo("body").modal('show');
-                console.log(doctorArray[i].profile.bio);
-            }
             console.log(typeof response.data);
+            infoModal.find('.modal-body').text(textData);
+            // var doctorArray = response.data;
+            // $('#myModal').on('hidden.bs.modal', function (e) {
+            // for (var i = 0; i < doctorArray.length; i++) {
+            // $('#doctors-bio').append($('<p>').text(doctorArray[i].profile.bio));
+            //    $('#myModal').appendTo"#doctors-bio").modal('show');
+            // console.log(doctorArray[i].profile.bio);
+
+            // console.log(typeof response.data);
         });
 
         /* ------------------------------Preventative Care Card ----------------------------------- */
@@ -157,8 +160,6 @@ $(document).ready(function () {
 
 
     var players = new Array();
-
-
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -197,4 +198,4 @@ $(document).ready(function () {
             videoId: playerInfo.videoId,
         });
     }
-})
+});
