@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     // need to create 1 on click event 
     // neeed to create a hover event 
-     $("#doctor-request").on("click", function (e) {
+     $("#doctor-request").on("click", function(e){
          e.preventDefault();
         var helpNeeded = "Find Doctor";
         var queryURL = "https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=4a76ed5c62af00d6fd94b0fa706cfbf6";
@@ -146,4 +146,4 @@ $(document).ready(function () {
             videoId: playerInfo.videoId,
         });
     }
-})
+// })
