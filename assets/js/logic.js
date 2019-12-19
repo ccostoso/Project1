@@ -102,7 +102,7 @@ function createQuestionWindows() {
         }
 
         main.append(
-            $("<div>").addClass("d-flex justify-content-start").append($("<button>").addClass("btn btn-danger back").text("Back"))
+            $("<div>").addClass("d-flex justify-content-start").append($("<button>").addClass("btn btn-outline-danger back").text("Back"))
         );
 
         $(document.body).append(main);
