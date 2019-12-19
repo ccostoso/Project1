@@ -95,8 +95,8 @@ function createQuestionWindows() {
         } else {
             main.append(
                 $("<hr>"), $("<p>").addClass("button-display my-3 text-center").append(
-                    $("<button>").addClass("btn btn-outline-info mr-4 next flu results").text("Yes"),
-                    $("<button>").addClass("btn btn-outline-info next cold results").text("No")
+                    $("<button>").addClass("btn btn-outline-info mr-4 next flu to-results").text("Yes"),
+                    $("<button>").addClass("btn btn-outline-info next cold to-results").text("No")
                 ), 
             );
         }
@@ -186,7 +186,7 @@ $(".back").on("click", function() {
     }
 });
 
-$(".results").on("click", function() {
+$(".to-results").on("click", function() {
     if (fluCount >= Math.floor((answerArr.length - 2) / 2)) {
         window.location.href = "results/newflu.html";
     } else {

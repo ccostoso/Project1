@@ -41,7 +41,7 @@
                                 <li class="list-group-item">Congestion</li>
                                 <li class="list-group-item">Low Grade Fever</li>
                                 <li class="list-group-item">Wheezing</li>
-                                <li class="list-group-item"><button type="button" class="btn btn-outline-success">Still Sneezing</button></li>
+                                <li class="list-group-item"><button type="button" id="doctor-modal-button" class="btn btn-outline-success" data-toggle="modal" data-target="#ourDoctorModal">Still Sneezing</button></li>
                             </ul>
                         </div>
                     </article>
@@ -69,7 +69,7 @@
         </div>
     </main>
     
-    <!-- Modal -->
+    <!-- Modal YouTube -->
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" style="width:90%" role="document">
@@ -108,7 +108,7 @@
                             <div class="full reveal row" id="featvideo">
                                 <div class="responsive-embed widescreen reveal-content">
                                     <div id="player6">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -118,6 +118,25 @@
                             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                         </footer>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ourDoctorModal" tabindex="-1" role="dialog"
+    aria-labelledby="ourDoctorModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ourDoctorModalTitle">Doctor's Bio's</h5>
+
+                </div>
+                <div class="modal-body" id="doctors-bio">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
