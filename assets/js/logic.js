@@ -188,8 +188,8 @@ $(".back").on("click", function() {
 
 $(".results").on("click", function() {
     if (fluCount >= Math.floor((answerArr.length - 2) / 2)) {
-        window.location.href = "results/flu.html";
+        window.location.href = "results/newflu.html";
     } else {
-        window.location.href = "results/cold.html";
+        window.location.href = "results/newcold.html";
     }
 })
