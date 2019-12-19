@@ -21,6 +21,7 @@ $(document).ready(function () {
     // need to create 1 on click event 
     // neeed to create a hover event 
     $("#doctor-request").on("click", function (e) {
+        console.log('click event');
         e.preventDefault();
         var helpNeeded = "Find Doctor";
         var queryURL = "https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=4a76ed5c62af00d6fd94b0fa706cfbf6";
@@ -31,16 +32,27 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             //  Trying to get the api of doctor location to be added into 
-            console.log('response----->', response);
+            console.log('response----->', response.data);
             // results[i]    .images.fixed_height.url
             var rNose = $("#doctor-request").attr("src", response.data[0].profile.images_url);
             console.log(typeof response.data);
-            infoModal.find('.modal-body').text(textData);
+            // infoModal.find('.modal-body').text(response.data);
             // var doctorArray = response.data;
             // $('#myModal').on('hidden.bs.modal', function (e) {
             // for (var i = 0; i < doctorArray.length; i++) {
-            // $('#doctors-bio').append($('<p>').text(doctorArray[i].profile.bio));
-            //    $('#myModal').appendTo"#doctors-bio").modal('show');
+            // $('#doct ors-bio').append($('<p>').text(doctorArray[i].profile.bio));
+               var docArray= response.data;
+               var doctor=docArray[0];
+               console.log("ourDoctorobject" ,doctor);
+               var doctorBio=doctor.profile.bio;
+               console.log(doctorBio);
+               $('#doctors-bio').text((doctorBio));
+            //    $('#doctors-bio').text(JSON.stringify(doctorBio).replace("\n", "<br><br>"));
+            // .modal('show')
+           
+            
+             
+             //.appendTo("#doctors-bio").modal('show');
             // console.log(doctorArray[i].profile.bio);
 
             // console.log(typeof response.data);
@@ -54,12 +66,12 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             //  Trying to get the image to be added into the img tag 
-            console.log('response----->', response);
+            // console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $('#working-out').attr("src", response.data[0].images.fixed_height.url);
-            console.log(typeof response.data);
+            // console.log(typeof response.data);
         });
 
 
@@ -77,12 +89,12 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             //  Trying to get the api of doctor location to be added into 
-            console.log('response----->', response);
+            // console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $('#serious-symptom').attr("src", response.data[0].profile.images_url);
-            console.log(typeof response.data);
+            // console.log(typeof response.data);
         });
 
 
@@ -94,12 +106,12 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             //  Trying to get the image to be added into the img tag 
-            console.log('response----->', response);
+            // console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $('#working-out').attr("src", response.data[0].images.fixed_height.url);
-            console.log(typeof response.data);
+            // console.log(typeof response.data);
         });
 
     });
@@ -108,7 +120,7 @@ $(document).ready(function () {
 
 
     $(document).ready(function () {
-        console.log("ready!");
+        // console.log("ready!");
 
 
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 'fever' + "&api_key=UbAY6SJJhOljEzSrIOAedTGTZperCmLZ";
@@ -118,10 +130,10 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             //  Trying to get the image to be added into the img tag 
-            console.log('response----->', response);
+            // console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $('#flu1').attr("src", response.data[3].images.fixed_height.url);
-            console.log('data---->', typeof response.data);
+            // console.log('data---->', typeof response.data);
         });
 
 
@@ -135,12 +147,12 @@ $(document).ready(function () {
             method: "GET"
 
         }).then(function (response) {
-            console.log(response);
+            // console.log(response);
             //  Trying to get the image to be added into the img tag 
-            console.log('response----->', response);
+            // console.log('response----->', response);
             // results[i]    .images.fixed_height.url
             var rNose = $('#flu2').attr("src", response.data[1].images.fixed_height.url);
-            console.log(typeof response.data);
+            // console.log(typeof response.data);
         });
 
     });
@@ -154,7 +166,7 @@ $(document).ready(function () {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log("youtube", response);
+        // console.log("youtube", response);
 
     })
 
