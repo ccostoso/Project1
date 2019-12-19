@@ -1,4 +1,5 @@
 $dur: .4s;
+$transparent: rgba(233, 236, 239, .8);
 
 @mixin fade($direction) {
     position: relative;
@@ -11,8 +12,14 @@ body {
     height: 100vh;
 }
 
+.list-group,
+.list-group-item {
+    background-color: transparent;
+}
+
 .btn,
-.jumbotron {
+.jumbotron,
+.card {
     border-radius: 0px;
 }
 
@@ -36,17 +43,74 @@ body {
 
 .transparent {
     z-index: 10;
-    background-color: rgba(233, 236, 239, .8);
+    background-color: $transparent;
 }
 
-#myVideo {
+.results {
     position: fixed;
+    top: 0;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
+    left: 0;
+    z-index: 1;
+    .resultscontent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
 }
 
+.card {
+    background-color: transparent;
+    ul, 
+    li,
+    h5,
+    p {
+        background-color: transparent;
+    }
+    .card-body {
+        background-color: $transparent;
+    }
+}
+
+.jumbotron {
+    background-color: $transparent;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg video {
+        width: 100%;
+        height: auto;
+    }
+}
+  
+@media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg video {
+        width: auto;
+        height: 100%;
+    }
+}
 
 @keyframes left-fade {
     from {
