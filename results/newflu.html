@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Achoo Results!</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <main class="results mt-4">
+        <div class="resultscontent">
+            <nav class="navbar fixed-top navbar-light bg-light d-flex justify-content-center">
+                <small>NOTE: This app should not be considered as comprehensive replacement for the advice of an
+                    experienced
+                    doctor. Consult with a medical professional for treatment of any condition.</small>
+            </nav>
+
+            <h1 class="text-center"><img src="https://mahjonggmentor.com/wp-content/uploads/2014/09/smiley-sneezer.jpg"
+                    alt="Sneezing Image" class="rounded-circle mx-auto mt-4">ACHOO</h1>
+
+            <section class="jumbotron container fade-right">
+                <h1 class="display-4">Oh no, you have the flu!</h1>
+                <p class="lead">Influenza, or flu, is a respiratory illness that results from a viral infection. Flu is
+                    highly
+                    contagious and spreads through respiratory droplets. A person can pass it on while talking or
+                    through
+                    physical contact, such as shaking hands.</p>
+            </section>
+
+            <section class="container">
+                <div class="row d-flex justify-content-around">
+                    <article class="card col-12 col-md-6 p-0">
+                        <div class="card-header p-0">
+                            <img id="flu1" class="card-img-top" alt="flu 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Flu Treatment</h5>
+                                <p class="card-text">Influenza (commonly known as "the flu") can cause mild to severe
+                                    symptoms, and in severe cases, can lead to death. Unlike a cold, the flu usually
+                                    comes on suddenly. People who have flu often feel some or all of these symptoms:</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Fever or feeling feverish/chills</li>
+                                    <li class="list-group-item">Cought</li>
+                                    <li class="list-group-item">Sore throat</li>
+                                    <li class="list-group-item">Runny or stuffy nose</li>
+                                    <li class="list-group-item">Muscle or body aches</li>
+                                    <li class="list-group-item"><button class="btn btn-outline-primary">Cure me now!</button></li>
+                                </ul>
+                                
+                            </div>
+                    </article>
+
+
+                    <article class="card col-12 col-md-6 p-0">
+                        <div class="card-header p-0">
+                            <img id="flu2" class="card-img-top" alt="Flu 2">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Preventative Care</h5>
+                            <p class="card-text">If you don’t make an effort to prevent it, odds are that you’ll catch
+                                the flu this season. You can take the following actions now to help you stay healthy:
+                            </p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Avoid close contact with people with flu</li>
+                                <li class="list-group-item">Get seasonal flu shot</li>
+                                <li class="list-group-item">Wash your hands often with warm water & soap</li>
+                                <li class="list-group-item">Carry hand sanitizer & disinfectant wipes</li>
+                                <li class="list-group-item">Exercise at least 4 days a week</li>
+                                <li class="list-group-item"><button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                    data-target="#staticBackdrop">
+                                    Help me prevent it
+                                </button></li class="list-group-item">
+                            </ul>
+                            
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="width:90%" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="staticBackdropLabel">Preventative Care Videos</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="height: 100%;">
+                    <div class="container">
+                        <article class="row">
+                            <h4 class="videotitle">7 ways to help prevent flu germs from spreading</h4>
+                            <div class="full reveal" id="featvideo" data-reveal>
+                                <div class="responsive-embed widescreen reveal-content">
+                                    <div id="player1">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                                
+                        <article class="row">
+                            <h4 class="videotitle">Natural Cold & Flu remedies with tonic
+                                        recipes</h4>
+                            <div class="full reveal" id="featvideo">
+                                <div class="responsive-embed widescreen reveal-content">
+                                    <div id="player2">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="row">
+                            <h4 class="videotitle">Prevent Flu! Get a Flu Vaccine
+                                and Take Preventive Actions
+                            </h4>
+                            <div class="full reveal" id="featvideo" data-reveal>
+                                <div class="responsive-embed widescreen reveal-content">
+                                    <div id="player3">
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <footer class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fullscreen-bg">
+        <video autoplay muted loop id="myVideo">
+            <source src="../assets/media/Winter_Forest_4K_Living_Background.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../assets/js/results.js" text="text/javascript"></script>
+</body>
+
+</html>
